@@ -1,0 +1,90 @@
+.registration-wrapper {
+  align-items: center;
+  height: 100vh;
+}
+
+.registration-wrapper h3 {
+  font-family: var(--tertiary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 34.4011px;
+  line-height: 47px;
+  color: var(--primary-color);
+}
+
+.registration-wrapper h5 {
+  font-family: var(--tertiary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 20.6406px;
+  line-height: 28px;
+  color: #4e6e81c0;
+  margin-bottom: 25px;
+}
+
+.registration-wrapper a {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  margin-top: 22px;
+  color: #03014c;
+  letter-spacing: .3px;
+}
+
+.registration-wrapper a span {
+  font-family: var(--secondary-font);
+  font-style: normal;
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 18px;
+  letter-spacing: .3px;
+  color: var(--primary-color);
+}
+
+TextField {
+  font-family: var(--tertiary-font) !important;
+}
+
+.registration-innerRight img {
+  width: 100%;
+}
+
+.registration-wrapper button {
+  width: 80% !important;
+  margin-top: 25px;
+  background: #4e6e81;
+  padding: 12px 0 !important;
+  font-family: var(--tertiary-font);
+  letter-spacing: 1.2px;
+}
+
+.registration-wrapper button:hover {
+  background: #4e6e81;
+}
+
+.TextFields {
+  width: 80% !important;
+  margin: 20px 0 !important;
+}
+
+.password-inner {
+  position: relative;
+}
+
+.password-eyeIcon {
+  position: absolute;
+  top: 50%;
+  right: 25%;
+  cursor: pointer;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+}
+
+.password-eyeIcon svg {
+  font-size: 20px;
+}

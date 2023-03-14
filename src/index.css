@@ -1,0 +1,37 @@
+/* Common Css Area Start */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  display: inline-block;
+}
+
+ul, ol {
+  margin: 0;
+  padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  line-height: 0.8;
+  padding: 0;
+  margin: 0;
+}
+
+:root {
+  --primary-font: 'Poppins', sans-serif;
+  --secondary-font: 'Opens Sans', sans-serif;
+  --tertiary-font: 'Nunito', sans-serif;
+  --primary-color: #4E6E81;
+  --secondary-color: #181823;
+  --tertiary-color: #F4F4F4;
+}
+
+/* Common Css Area End */
