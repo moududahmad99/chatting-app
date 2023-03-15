@@ -32,6 +32,7 @@ h1, h2, h3, h4, h5, h6 {
   --primary-color: #4E6E81;
   --secondary-color: #181823;
   --tertiary-color: #F4F4F4;
+  --error-color: #FF7B54;
 }
 
 /* Common Css Area End */

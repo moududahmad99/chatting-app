@@ -1,5 +1,5 @@
 import React from 'react';
-import Registration from './Pages/Registration/Registration';
+import Registration from './Pages/Registration';
 
 function App() {
     return (

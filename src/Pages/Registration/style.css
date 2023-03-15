@@ -22,7 +22,7 @@
   margin-bottom: 25px;
 }
 
-.registration-wrapper a {
+.registration-wrapper p {
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 400;
@@ -33,7 +33,7 @@
   letter-spacing: .3px;
 }
 
-.registration-wrapper a span {
+.registration-wrapper p span {
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
@@ -87,4 +87,12 @@ TextField {
 
 .password-eyeIcon svg {
   font-size: 20px;
+}
+
+
+.inputError {
+  font-size: 14px;
+  color: var(--error-color);
+  font-weight: 400;
+  font-family: var(--tertiary-font);
 }
