@@ -8,3 +8,8 @@ const signUpValidation = Yup.object({
 })
 
 export default signUpValidation;
+
+export const signInValidation = Yup.object({
+    email: Yup.string().required('Please Enter a Valid Email Address!'),
+    password: Yup.string().min(6).max(20).required('Please Enter Your Password!')
+})

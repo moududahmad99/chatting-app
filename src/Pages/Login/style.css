@@ -1,28 +1,29 @@
-.registration-wrapper {
+.login-wrapper {
   align-items: center;
   height: 100vh;
 }
 
-.registration-wrapper h3 {
+.login-wrapper h3 {
   font-family: var(--tertiary-font);
   font-style: normal;
   font-weight: 700;
-  font-size: 34.4011px;
+  font-size: 34px;
   line-height: 47px;
   color: var(--primary-color);
+  margin: 15px 0;
 }
 
-.registration-wrapper h5 {
+.login-wrapper h5 {
   font-family: var(--tertiary-font);
   font-style: normal;
   font-weight: 400;
-  font-size: 20.6406px;
+  font-size: 20px;
   line-height: 28px;
   color: #4e6e81c0;
   margin-bottom: 25px;
 }
 
-.registration-wrapper p {
+.login-wrapper p {
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 400;
@@ -30,29 +31,31 @@
   line-height: 18px;
   margin-top: 22px;
   color: #03014c;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
+  text-align: center !important;
+  width: 80%;
 }
 
-.registration-wrapper p a {
+.login-wrapper p a {
+  color: var(--primary-color);
   font-family: var(--secondary-font);
   font-style: normal;
   font-weight: 700;
   font-size: 14px;
   line-height: 18px;
-  letter-spacing: .3px;
+  letter-spacing: 0.3px;
   cursor: pointer;
-  color: var(--primary-color);
 }
 
 TextField {
   font-family: var(--tertiary-font) !important;
 }
 
-.registration-innerRight img {
-  width: 100%;
+.login-innerLeft img {
+  width: 85%;
 }
 
-.registration-wrapper button {
+.login-wrapper button {
   width: 80% !important;
   margin-top: 25px;
   background: #4e6e81;
@@ -61,13 +64,14 @@ TextField {
   letter-spacing: 1.2px;
 }
 
-.registration-wrapper button:hover {
+.login-wrapper button:hover {
   background: #4e6e81;
 }
 
 .TextFields {
   width: 80% !important;
   margin: 20px 0 !important;
+  justify-content: end;
 }
 
 .password-inner {
@@ -90,10 +94,25 @@ TextField {
   font-size: 20px;
 }
 
-
 .inputError {
   font-size: 14px;
   color: var(--error-color);
   font-weight: 400;
   font-family: var(--tertiary-font);
+}
+
+.avator {
+    width: 70px;
+    padding: 5px;
+    height: 70px;
+    background: #4E6E81;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.avator img {
+    width: 100%;
 }

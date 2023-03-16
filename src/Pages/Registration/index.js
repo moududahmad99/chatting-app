@@ -18,6 +18,7 @@ import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 
 import { ScaleLoader } from 'react-spinners';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
 
@@ -53,6 +54,7 @@ const Registration = () => {
             ).then(() => {
                 formik.resetForm();
                 setLoading(false)
+                navigate('/login')
             }).catch(error => {
                 if (error.code.includes('auth/email-already-in-use')) {
                     toast.error('Your Email Already Registered!', {
@@ -71,6 +73,7 @@ const Registration = () => {
         }
     })
 
+    const navigate = useNavigate()
 
     return (
         <React.Fragment>
@@ -143,7 +146,7 @@ const Registration = () => {
                                             </Button>
                                         )
                                     }
-                                    <p>Already have an account? <span>Sign In</span></p>
+                                    <p>Already have an account? <Link to='/login'>Sign In</Link></p>
                                 </form>
                             </div>
                         </Grid>
