@@ -102,17 +102,41 @@ TextField {
 }
 
 .avator {
-    width: 70px;
-    padding: 5px;
-    height: 70px;
-    background: #4E6E81;
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+  width: 70px;
+  padding: 5px;
+  height: 70px;
+  background: #4e6e81;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
 }
 
 .avator img {
-    width: 100%;
+  width: 100%;
+}
+
+.authentication {
+  border: thin solid #03014c75;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  width: 240px;
+  justify-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.authentication .authGoogle-logo {
+  padding-right: 15px;
+}
+
+.authentication .authGoogle-text {
+  font-family: var(--secondary-font);
+  color: #03014C;
 }

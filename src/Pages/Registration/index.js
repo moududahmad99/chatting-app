@@ -22,13 +22,13 @@ import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
 
-    let [password, setpassword] = useState('password')
+    let [password, setPassword] = useState('password');
 
     const handlePassword = () => {
         if (password === 'password') {
-            setpassword('text')
+            setPassword('text')
         } else {
-            setpassword('password')
+            setPassword('password')
         }
     }
 
@@ -38,6 +38,8 @@ const Registration = () => {
         password: '',
         confirmPassword: ''
     }
+
+    const navigate = useNavigate()
 
     let [loading, setLoading] = useState(false)
     let auth = getAuth();
@@ -73,7 +75,6 @@ const Registration = () => {
         }
     })
 
-    const navigate = useNavigate()
 
     return (
         <React.Fragment>

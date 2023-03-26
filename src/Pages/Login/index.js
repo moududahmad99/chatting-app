@@ -10,18 +10,22 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useFormik } from 'formik';
 
 import { signInValidation } from '../../validation/validation';
-import { getAuth, signInWithEmailAndPassword } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
 import './style.css'
 
 import { ScaleLoader } from 'react-spinners';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const Registration = () => {
 
     let [password, setpassword] = useState('password')
+    let auth = getAuth();
+    let [loading, setLoading] = useState(false)
+    const googleProvider = new GoogleAuthProvider();
+    const navigate = useNavigate()
 
     const handlePassword = () => {
         if (password === 'password') {
@@ -36,8 +40,6 @@ const Registration = () => {
         password: '',
     }
 
-    let [loading, setLoading] = useState(false)
-    let auth = getAuth();
 
     const formik = useFormik({
         initialValues: initializeValue,
@@ -49,6 +51,7 @@ const Registration = () => {
                 formik.values.email,
                 formik.values.password
             ).then(() => {
+                navigate('/')
                 setLoading(false)
                 formik.resetForm();
                 toast.success('Login Succses!', {
@@ -79,26 +82,43 @@ const Registration = () => {
         }
     })
 
+    // Google Authentication
+
+    const handleGoogleAuthentication = () => {
+        signInWithPopup(auth, googleProvider).then(() => {
+            navigate('/')
+        })
+    }
 
     return (
         <React.Fragment>
             <Container fixed>
                 <ToastContainer />
                 <Grid container spacing={2} className="login-wrapper">
-                    <Grid item xs={7}>
+                    <Grid item xs={6}>
                         <div className='login-innerLeft'>
                             <picture>
                                 <img src="./images/Login.png" alt="Login" />
                             </picture>
                         </div>
                     </Grid>
-                    <Grid item xs={5}>
+                    <Grid item xs={6}>
                         <div className='avator'>
                             <picture>
                                 <img src="./images/avator.png" alt="avator" />
                             </picture>
                         </div>
                         <h3>Login To Your Account</h3>
+                        <div className='authentication' onClick={handleGoogleAuthentication}>
+                            <div className='authGoogle-logo'>
+                                <picture>
+                                    <img src="./images/google-logo.svg" alt="google" />
+                                </picture>
+                            </div>
+                            <div className='authGoogle-text'>
+                                <h4>Login with Google</h4>
+                            </div>
+                        </div>
                         <div className='login-innerRight'>
                             <form onSubmit={formik.handleSubmit}>
                                 <TextField
