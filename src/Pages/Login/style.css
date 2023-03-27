@@ -254,3 +254,37 @@ TextField {
 .twitterAuth .authTwitter-text h4 {
   font-family: var(--tertiary-font);
 }
+
+/* Github Authentication */
+
+.githubAuth {
+  border: thin solid #03014c75;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  width: 140px;
+  justify-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.githubAuth .authGithub-logo {
+  padding-right: 15px;
+}
+
+.githubAuth .authGithub-logo img {
+  height: 30px;
+  width: 30px;
+}
+
+.githubAuth .authGithub-text {
+  color: #03014C;
+}
+
+.githubAuth .authGithub-text h4 {
+  font-family: var(--tertiary-font);
+}

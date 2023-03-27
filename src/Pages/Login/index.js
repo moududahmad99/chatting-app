@@ -10,7 +10,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useFormik } from 'formik';
 
 import { signInValidation } from '../../validation/validation';
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -29,7 +29,8 @@ const Registration = () => {
     let [loading, setLoading] = useState(false)
     const googleProvider = new GoogleAuthProvider();
     const facebookProvider = new FacebookAuthProvider()
-    const twitterProvider = new TwitterAuthProvider()
+    // const twitterProvider = new TwitterAuthProvider()
+    const githubProvider = new GithubAuthProvider()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -104,8 +105,15 @@ const Registration = () => {
     }
 
     // Twitter Authentication
-    const handleTwitterAuthentication = () => {
-        signInWithPopup(auth, twitterProvider).then(() => {
+    // const handleTwitterAuthentication = () => {
+    //     signInWithPopup(auth, twitterProvider).then(() => {
+    //         navigate('/')
+    //     })
+    // }
+
+    // Github Authentication
+    const handleGithubAuthentication = () => {
+        signInWithPopup(auth, githubProvider).then(() => {
             navigate('/')
         })
     }
@@ -150,7 +158,7 @@ const Registration = () => {
                                     <h4>Facebook</h4>
                                 </div>
                             </div>
-                            <div className='twitterAuth' onClick={handleTwitterAuthentication}>
+                            {/* <div className='twitterAuth' onClick={handleTwitterAuthentication}>
                                 <div className='authTwitter-logo'>
                                     <picture>
                                         <img src="./images/twitter-logo.png" alt="twitter" />
@@ -158,6 +166,16 @@ const Registration = () => {
                                 </div>
                                 <div className='authTwitter-text'>
                                     <h4>Twitter</h4>
+                                </div>
+                            </div> */}
+                            <div className='githubAuth' onClick={handleGithubAuthentication}>
+                                <div className='authGithub-logo'>
+                                    <picture>
+                                        <img src="./images/github-logo.png" alt="github" />
+                                    </picture>
+                                </div>
+                                <div className='authGithub-text'>
+                                    <h4>Github</h4>
                                 </div>
                             </div>
                         </div>
