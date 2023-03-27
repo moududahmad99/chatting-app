@@ -19,6 +19,9 @@ import './style.css'
 import { ScaleLoader } from 'react-spinners';
 import { Link, useNavigate } from 'react-router-dom';
 
+import { useDispatch } from 'react-redux';
+import { loginUser } from '../../Features/Slice/UserSlice';
+
 const Registration = () => {
 
     let [password, setpassword] = useState('password')
@@ -26,6 +29,7 @@ const Registration = () => {
     let [loading, setLoading] = useState(false)
     const googleProvider = new GoogleAuthProvider();
     const navigate = useNavigate()
+    const dispatch = useDispatch()
 
     const handlePassword = () => {
         if (password === 'password') {
@@ -50,9 +54,10 @@ const Registration = () => {
                 auth,
                 formik.values.email,
                 formik.values.password
-            ).then(() => {
-                navigate('/')
-                setLoading(false)
+            ).then(({user}) => {
+                navigate('/');
+                dispatch(loginUser(user));
+                setLoading(false);
                 formik.resetForm();
                 toast.success('Login Succses!', {
                     position: "top-right",
@@ -77,10 +82,10 @@ const Registration = () => {
                         progress: undefined,
                         theme: "dark",
                     });
-                }
-            })
+                };
+            });
         }
-    })
+    });
 
     // Google Authentication
 
