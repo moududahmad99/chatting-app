@@ -117,7 +117,16 @@ TextField {
   width: 100%;
 }
 
+/* Authentication */
+
 .authentication {
+  display: flex;
+  gap: 14px;
+}
+
+/* Google Authentication */
+
+.googleAuth {
   border: thin solid #03014c75;
   border-radius: 10px;
   -webkit-border-radius: 10px;
@@ -125,18 +134,123 @@ TextField {
   -ms-border-radius: 10px;
   -o-border-radius: 10px;
   display: flex;
-  width: 240px;
+  width: 140px;
   justify-content: center;
   padding: 20px 10px;
   align-items: center;
   cursor: pointer;
 }
 
-.authentication .authGoogle-logo {
+.googleAuth .authGoogle-logo {
   padding-right: 15px;
 }
 
-.authentication .authGoogle-text {
-  font-family: var(--secondary-font);
+.googleAuth .authGoogle-text {
   color: #03014C;
+}
+
+.googleAuth .authGoogle-text h4 {
+  font-family: var(--secondary-font);
+}
+
+/* Facebook Authentication */
+
+.facebookAuth {
+  border: thin solid #03014c75;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  width: 140px;
+  justify-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.facebookAuth .authFacebook-logo {
+  padding-right: 15px;
+}
+
+.facebookAuth .authFacebook-logo img {
+  height: 20px;
+  width: 20px;
+}
+
+.facebookAuth .authFacebook-text {
+  color: #03014C;
+}
+
+.facebookAuth .authFacebook-text h4 {
+  font-family: var(--tertiary-font);
+}
+
+/* Facebook Authentication */
+
+.facebookAuth {
+  border: thin solid #03014c75;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  width: 140px;
+  justify-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.facebookAuth .authFacebook-logo {
+  padding-right: 15px;
+}
+
+.facebookAuth .authFacebook-logo img {
+  height: 20px;
+  width: 20px;
+}
+
+.facebookAuth .authFacebook-text {
+  color: #03014C;
+}
+
+.facebookAuth .authFacebook-text h4 {
+  font-family: var(--tertiary-font);
+}
+
+/* Twitter Authentication */
+
+.twitterAuth {
+  border: thin solid #03014c75;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  width: 140px;
+  justify-content: center;
+  padding: 20px 10px;
+  align-items: center;
+  cursor: pointer;
+}
+
+.twitterAuth .authTwitter-logo {
+  padding-right: 15px;
+}
+
+.twitterAuth .authTwitter-logo img {
+  height: 30px;
+  width: 30px;
+}
+
+.twitterAuth .authTwitter-text {
+  color: #03014C;
+}
+
+.twitterAuth .authTwitter-text h4 {
+  font-family: var(--tertiary-font);
 }

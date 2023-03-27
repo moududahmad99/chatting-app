@@ -10,7 +10,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useFormik } from 'formik';
 
 import { signInValidation } from '../../validation/validation';
-import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -28,6 +28,8 @@ const Registration = () => {
     let auth = getAuth();
     let [loading, setLoading] = useState(false)
     const googleProvider = new GoogleAuthProvider();
+    const facebookProvider = new FacebookAuthProvider()
+    const twitterProvider = new TwitterAuthProvider()
     const navigate = useNavigate()
     const dispatch = useDispatch()
 
@@ -54,7 +56,7 @@ const Registration = () => {
                 auth,
                 formik.values.email,
                 formik.values.password
-            ).then(({user}) => {
+            ).then(({ user }) => {
                 navigate('/');
                 dispatch(loginUser(user));
                 setLoading(false);
@@ -88,9 +90,22 @@ const Registration = () => {
     });
 
     // Google Authentication
-
     const handleGoogleAuthentication = () => {
         signInWithPopup(auth, googleProvider).then(() => {
+            navigate('/')
+        })
+    }
+
+    // Facebook Authentication
+    const handleFacebookAuthentication = () => {
+        signInWithPopup(auth, facebookProvider).then(() => {
+            navigate('/')
+        })
+    }
+
+    // Twitter Authentication
+    const handleTwitterAuthentication = () => {
+        signInWithPopup(auth, twitterProvider).then(() => {
             navigate('/')
         })
     }
@@ -114,14 +129,36 @@ const Registration = () => {
                             </picture>
                         </div>
                         <h3>Login To Your Account</h3>
-                        <div className='authentication' onClick={handleGoogleAuthentication}>
-                            <div className='authGoogle-logo'>
-                                <picture>
-                                    <img src="./images/google-logo.svg" alt="google" />
-                                </picture>
+                        <div className='authentication' >
+                            <div className='googleAuth' onClick={handleGoogleAuthentication}>
+                                <div className='authGoogle-logo'>
+                                    <picture>
+                                        <img src="./images/google-logo.svg" alt="google" />
+                                    </picture>
+                                </div>
+                                <div className='authGoogle-text'>
+                                    <h4>Google</h4>
+                                </div>
                             </div>
-                            <div className='authGoogle-text'>
-                                <h4>Login with Google</h4>
+                            <div className='facebookAuth' onClick={handleFacebookAuthentication}>
+                                <div className='authFacebook-logo'>
+                                    <picture>
+                                        <img src="./images/facebook-logo.png" alt="facebook" />
+                                    </picture>
+                                </div>
+                                <div className='authFacebook-text'>
+                                    <h4>Facebook</h4>
+                                </div>
+                            </div>
+                            <div className='twitterAuth' onClick={handleTwitterAuthentication}>
+                                <div className='authTwitter-logo'>
+                                    <picture>
+                                        <img src="./images/twitter-logo.png" alt="twitter" />
+                                    </picture>
+                                </div>
+                                <div className='authTwitter-text'>
+                                    <h4>Twitter</h4>
+                                </div>
                             </div>
                         </div>
                         <div className='login-innerRight'>
