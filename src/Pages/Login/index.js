@@ -10,6 +10,7 @@ import { AiFillEye, AiFillEyeInvisible } from 'react-icons/ai';
 import { useFormik } from 'formik';
 
 import { signInValidation } from '../../validation/validation';
+// eslint-disable-next-line
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider, FacebookAuthProvider, TwitterAuthProvider, GithubAuthProvider, signInWithPopup } from "firebase/auth";
 
 import { ToastContainer, toast } from 'react-toastify';
@@ -22,7 +23,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { useDispatch } from 'react-redux';
 import { loginUser } from '../../Features/Slice/UserSlice';
 
-const Registration = () => {
+const Login = () => {
 
     let [password, setpassword] = useState('password')
     let auth = getAuth();
@@ -60,6 +61,7 @@ const Registration = () => {
             ).then(({ user }) => {
                 navigate('/');
                 dispatch(loginUser(user));
+                localStorage.setItem("users", JSON.stringify(user));
                 setLoading(false);
                 formik.resetForm();
                 toast.success('Login Succses!', {
@@ -233,4 +235,4 @@ const Registration = () => {
     )
 }
 
-export default Registration
+export default Login

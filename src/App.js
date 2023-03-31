@@ -3,15 +3,21 @@ import { createBrowserRouter, createRoutesFromElements, Route, RouterProvider } 
 import Home from './Pages/Home';
 import Login from './Pages/Login';
 import Registration from './Pages/Registration';
+import NotLoggedIn from './PrivateRouter/NotLoggedIn';
+import LoggedIn from './PrivateRouter/userLoggedIn';
 
 function App() {
-    
+
     const router = createBrowserRouter(
         createRoutesFromElements(
             <Route>
-                <Route path='/' element={<Home />} />
-                <Route path='/registration' element={<Registration />} />
-                <Route path='/login' element={<Login />} />
+                <Route element={<LoggedIn />}>
+                    <Route path='/' element={<Home />} />
+                </Route>
+                <Route element={<NotLoggedIn />}>
+                    <Route path='/registration' element={<Registration />} />
+                    <Route path='/login' element={<Login />} />
+                </Route>
             </Route>
         )
     )
