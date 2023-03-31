@@ -12,7 +12,7 @@ import './style.css'
 import { useFormik } from 'formik';
 import signUpValidation from '../../validation/validation';
 
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword, sendEmailVerification } from "firebase/auth";
 
 import { ToastContainer, toast } from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -23,6 +23,8 @@ import { Link, useNavigate } from 'react-router-dom';
 const Registration = () => {
 
     let [password, setPassword] = useState('password');
+    let [loading, setLoading] = useState(false)
+    let auth = getAuth();
 
     const handlePassword = () => {
         if (password === 'password') {
@@ -41,8 +43,7 @@ const Registration = () => {
 
     const navigate = useNavigate()
 
-    let [loading, setLoading] = useState(false)
-    let auth = getAuth();
+    console.log(auth);
 
     const formik = useFormik({
         initialValues: initializeValue,
@@ -54,6 +55,7 @@ const Registration = () => {
                 formik.values.email,
                 formik.values.password
             ).then(() => {
+                sendEmailVerification(auth.currentUser)
                 formik.resetForm();
                 setLoading(false)
                 navigate('/login')

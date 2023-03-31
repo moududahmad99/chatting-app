@@ -59,12 +59,24 @@ const Login = () => {
                 formik.values.email,
                 formik.values.password
             ).then(({ user }) => {
-                navigate('/');
-                dispatch(loginUser(user));
-                localStorage.setItem("users", JSON.stringify(user));
+                if (auth.currentUser.emailVerified === true) {
+                    navigate('/');
+                    dispatch(loginUser(user));
+                    localStorage.setItem("users", JSON.stringify(user));
+                    toast.success('Login Succses!', {
+                        position: "top-right",
+                        autoClose: 5000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "dark",
+                    });
+                }
                 setLoading(false);
                 formik.resetForm();
-                toast.success('Login Succses!', {
+                toast.error('Email Not Verified', {
                     position: "top-right",
                     autoClose: 5000,
                     hideProgressBar: false,
