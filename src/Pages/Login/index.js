@@ -237,7 +237,7 @@ const Login = () => {
                                     )
                                 }
                                 <p>Not have an account? <Link to='/registration'>Sign Up</Link></p>
-                                <p>Forgot Password?</p>
+                                <p><Link to='/forgotpassword'>Forgot Password?</Link></p>
                             </form>
                         </div>
                     </Grid>

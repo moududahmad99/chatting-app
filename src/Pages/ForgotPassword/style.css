@@ -1,0 +1,30 @@
+.forget-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100vh;
+  background-color: rgb(235, 240, 245);
+}
+
+.forget-inner {
+  padding: 20px 40px;
+  background-color: #ffffff;
+}
+
+.forget-inner h3 {
+  font-family: var(--primary-font);
+  font-weight: 400;
+  font-size: 22px;
+  margin: 10px 0 20px 0;
+}
+
+.forget-inner-body {
+  height: 100%;
+  width: 400px;
+}
+
+.forget-button {
+  width: 100px;
+  background-color: #7C96AB !important;
+}
