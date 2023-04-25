@@ -6,6 +6,7 @@ import Registration from './Pages/Registration';
 import NotLoggedIn from './PrivateRouter/NotLoggedIn';
 import LoggedIn from './PrivateRouter/userLoggedIn';
 import ForgotPassword from './Pages/ForgotPassword';
+import RootLayout from './Layout';
 
 function App() {
 
@@ -13,7 +14,9 @@ function App() {
         createRoutesFromElements(
             <Route>
                 <Route element={<LoggedIn />}>
-                    <Route path='/' element={<Home />} />
+                    <Route element={<RootLayout />}>
+                        <Route path='/' element={<Home />} />
+                    </Route>
                 </Route>
                 <Route element={<NotLoggedIn />}>
                     <Route path='/registration' element={<Registration />} />
